@@ -15,7 +15,7 @@ var PORT = process.env.PORT || 8080;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname,"public"));
+app.use(express.static("public"));
 
 //Empty array for the notes or Data
 // =============================================================
@@ -31,24 +31,30 @@ app.get("/", function (req, res) {
 
 // Displays all notes
 app.get("/api/notes", function (req, res) {
-    fs.readFile("db/db.json", "utf8", function (err, data) {
-        res.json(JSON.parse(data));
-    })
+        return res.json(JSON.parse(data));
 });
 
-// Create New Characters - takes in JSON input
-app.post("/api/notes", function (req, res) {
-    var title = req.body.title;
-    var text = req.body.text;
-    var newNote = { title, text, id: uuidv1() }
-    var pastNotes = JSON.parse(fs.readFileSync("db/db.json", "utf8"));
-   //Add the json the user sent to the notes array
-    pastNotes.push(newNote)
+// If no matching route is found, return false
+app.get("*", function (req, res) {
+    var currentNote = req.params.notesArray;
 
-    fs.writeFileSync("db/db.json", JSON.stringify(pastNotes));
-    //Display the JSON to the users
-    res.json(newNote);
-})
+    for (var i = 0; i < notesArray.length; i++) {
+      if (currentNote === notesArray[i].routeName) {
+        return res.json(notesArray[i]);
+      }
+    }
+  
+    return res.json(false);
+  });
+
+// Create new notes - takes in JSON input
+app.post("/api/notes", function (req, res) {
+  // req.body hosts is equal to the JSON post sent from the user
+  // This works because of our body parsing middleware
+  var newNote = req.body;
+  notesArray.push(newNote);
+  res.json(newNote);
+});
 
 // API delete route
 app.delete("/api/notes/:id", function (req, res) {
