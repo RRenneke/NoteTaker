@@ -14,3 +14,9 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 Application should allow users to create and save notes.
 Application should allow users to view previously saved notes.
 Application should allow users to delete previously saved notes.
+
+<h4>Site Screenshot</h4>
+
+
+<h4>Links</h4>
+https://github.com/RRenneke/NoteTaker
