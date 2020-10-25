@@ -17,6 +17,5 @@ Application should allow users to delete previously saved notes.
 
 <h4>Site Screenshot</h4>
 
-
 <h4>Links</h4>
 https://github.com/RRenneke/NoteTaker
