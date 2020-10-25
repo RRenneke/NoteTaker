@@ -57,7 +57,8 @@ app.post("/api/notes", function (req, res) {
   res.json(newNote);
 })
 
-// API delete route. Tutor help.
+// API delete route. Tutor and Zach help.
+//bring it to the app, modify it, and remove it
 app.delete("/api/notes/:id", function (req, res) {
   const pastNotes = JSON.parse(fs.readFileSync("db.json", "utf8"));
   const updateNotes = pastNotes.filter(function(note){
