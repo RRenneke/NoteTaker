@@ -16,6 +16,9 @@ Application should allow users to view previously saved notes.
 Application should allow users to delete previously saved notes.
 
 <h4>Site Screenshot</h4>
+<img src="public/assets/homeNoteTakerScreenshot.png" alt="Home Page Screenshot">
+<br>
+<img src="public/assets/noteEditScreenshot.png" alt="Note Edit Page Screenshot">
 
 <h4>Links</h4>
 https://github.com/RRenneke/NoteTaker
