@@ -22,7 +22,7 @@ app.use(express.static("public"));
 
 //Empty array for the notes or Data
 // =============================================================
-let notesArray = [];
+let noteArr= [];
 
 
 // Routes
