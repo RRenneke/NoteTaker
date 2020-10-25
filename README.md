@@ -21,4 +21,9 @@ Application should allow users to delete previously saved notes.
 <img src="public/assets/noteEditScreenshot.png" alt="Note Edit Page Screenshot">
 
 <h4>Links</h4>
+
+GitHub Link: 
 https://github.com/RRenneke/NoteTaker
+
+Deployed Link:
+https://notetakeassignment.herokuapp.com/
